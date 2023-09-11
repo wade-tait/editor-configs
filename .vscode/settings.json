@@ -1,0 +1,22 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.options": { "configFile": "./.eslintrc.json" },
+  "editor.bracketPairColorization.enabled": true,
+  "todohighlight.defaultStyle": {
+    "color": "#000000",
+    "backgroundColor": "#00FFFF",
+    "overviewRulerColor": "#00FFFF"
+  },
+  "todohighlight.keywords": [
+    {
+      "text": "TODO:",
+      "color": "#000000",
+      "backgroundColor": "#00FFFF",
+      "overviewRulerColor": "#00FFFF"
+    }
+  ]
+}

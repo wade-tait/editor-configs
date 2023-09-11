@@ -1,0 +1,43 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  // If you have issues with breakpoints attaching you may need enable sourceMap in tsconfig.json i.e: {compilerOptions: {... "sourceMap": true }}
+  // however, do not unintentionally commit changes in tsconfig!
+  "configurations": [
+    {
+      // Configuration to enable vsCode debugger
+      //  From the vsCode debugger panel run select 'Debug with Chrome' from the dropdown menu and then click start button.
+      "type": "chrome",
+      "request": "launch",
+      "name": "Debug With Chrome",
+      "url": "http://localhost:3000",
+      "runtimeArgs": ["--auto-open-devtools-for-tabs"],
+      "webRoot": "${workspaceRoot}",
+      "skipFiles": ["node_modules/**/*.js"],
+      "trace": true
+    },
+    // Configuration to enable vsCode integrated debugger to run test files.
+    // From the vsCode debugger panel select 'Jest Debug opened file' from the dropdown menu and then click start button.
+    // Autoruns against the selected (currently focused in editor) test file.
+    {
+      "name": "Jest Debug opened file",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run-script",
+        "test:unit",
+        "--",
+        "${fileBasenameNoExtension}",
+        "--runInBand",
+        "--no-cache",
+        "--watchAll"
+      ],
+      "cwd": "${workspaceRoot}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ]
+}
